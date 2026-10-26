@@ -343,3 +343,11 @@ details p + p { margin-top: 12px; }
   .hero-description { max-width: none; }
   .experience-deliverables li { font-size: 13px; gap: 12px; }
 }
+
+/* Multiple experience entries and the languages row */
+.experience-layout + .experience-layout { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--line); }
+.about-languages { margin-top: 24px; }
+.about-languages .eyebrow { display: block; margin-bottom: 10px; font-size: 9px; }
+.about-languages ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 24px; }
+.about-languages li { font-size: 13px; color: #d8ddd5; }
+.about-languages li span { margin-left: 6px; color: var(--color-muted); }

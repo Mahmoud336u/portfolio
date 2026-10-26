@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Arrow from '../components/Arrow.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import { profile, projects, expertise, experience, resumes, contact, certifications } from '../data/portfolio';
+import { profile, projects, expertise, experience, languages, resumes, contact, certifications } from '../data/portfolio';
 const [meridian, multiAgent] = projects;
 ---
 <Layout>
@@ -17,21 +17,21 @@ const [meridian, multiAgent] = projects;
     </section>
 
     <section id="experience" class="section" aria-label="Professional experience">
-      <SectionHeading number="01" title="Professional experience" note="Client delivery. Data pipelines and analytics." />
-      <div class="experience-layout">
+      <SectionHeading number="01" title="Professional experience" note="Data pipelines, analytics and applied ML." />
+      {experience.map(entry => <div class="experience-layout">
         <div class="experience-meta">
-          <span class="eyebrow accent">{experience.employment}</span>
-          <h3>{experience.title}</h3>
-          <p>{experience.period}</p>
-          <span class="context-label">{experience.context}</span>
-          <p class="small muted">Separate client engagements</p>
+          <span class="eyebrow accent">{entry.employment}</span>
+          <h3>{entry.title}</h3>
+          {entry.period && <p>{entry.period}</p>}
+          <span class="context-label">{entry.context}</span>
+          {entry.note && <p class="small muted">{entry.note}</p>}
         </div>
         <div class="experience-body">
-          <p class="lead">{experience.summary}</p>
-          <ol class="experience-deliverables">{experience.bullets.map(item => <li>{item}</li>)}</ol>
-          <p class="small muted scope-note">Contributions are summarized across separate e-commerce and telecom engagements; this does not imply a shared system or identical stacks.</p>
+          <p class="lead">{entry.summary}</p>
+          <ol class="experience-deliverables">{entry.bullets.map(item => <li>{item}</li>)}</ol>
+          {entry.scopeNote && <p class="small muted scope-note">{entry.scopeNote}</p>}
         </div>
-      </div>
+      </div>)}
     </section>
 
     <section id="work" class="section work-section" aria-label="Selected work">
@@ -73,7 +73,7 @@ const [meridian, multiAgent] = projects;
       </div>
     </section>
 
-    <section id="about" class="section about-layout" aria-label="About Mahmoud"><div><p class="eyebrow accent">04 / About</p><h2>Curious about the model.<br /><span class="serif">Committed to the system.</span></h2></div><div><p class="lead">{profile.about}</p><p>{profile.approach}</p><div class="about-location"><span class="status-dot" aria-hidden="true"></span> Egypt · Cairo · Remote · European relocation</div></div></section>
+    <section id="about" class="section about-layout" aria-label="About Mahmoud"><div><p class="eyebrow accent">04 / About</p><h2>Curious about the model.<br /><span class="serif">Committed to the system.</span></h2></div><div><p class="lead">{profile.about}</p><p>{profile.approach}</p><div class="about-location"><span class="status-dot" aria-hidden="true"></span> Egypt · Cairo · Remote · European relocation</div><div class="about-languages"><span class="eyebrow muted">Languages</span><ul>{languages.map(item => <li>{item.language} <span>{item.level}{item.note ? ` · ${item.note}` : ''}</span></li>)}</ul></div></div></section>
 
     <section id="contact" class="contact-section" aria-labelledby="contact-title"><div class="contact-main"><p class="eyebrow accent">05 / Let’s connect</p><h2 id="contact-title">Useful systems start with<br /><span class="serif">a good conversation.</span></h2><p>I’m exploring AI, ML, and data engineering opportunities. <br />Email me about a role or connect with me on LinkedIn.</p><div class="actions">{contact.email && <a class="button button-primary" href={`mailto:${contact.email}`}>Email Mahmoud <Arrow external /></a>}<a class={contact.email ? "text-link" : "button button-primary"} href={profile.github}>Find me on GitHub <Arrow external /></a>{contact.linkedin && <a class="text-link" href={contact.linkedin}>LinkedIn <Arrow external /></a>}</div>{resumes.length > 0 && <div class="resume-links"><h3>Résumés</h3>{resumes.map(resume => <a class="text-link" href={resume.href} download>{resume.label} <Arrow /></a>)}</div>}</div><aside class="services"><span class="eyebrow muted">Also open to freelance projects</span><h3>Work with me</h3><ul><li>Python backends & API integrations</li><li>Data pipelines, validation & reporting</li><li>AI assistants & retrieval workflows</li></ul><p>Focused engineering support,<br />with a clear delivery and handover.</p></aside></section>
   </div>
