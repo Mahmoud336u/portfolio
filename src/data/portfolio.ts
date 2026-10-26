@@ -16,10 +16,10 @@ export const profile = {
   github: 'https://github.com/Mahmoud336u',
   location: 'Egypt',
   introduction: [
-    'I am an AI Engineer who builds LLM and RAG applications and the MLOps pipelines that run them on AWS.',
-    'My main project is an AI personal finance assistant. Its TensorFlow transaction classifier reaches 0.94 macro-F1 against 0.82 for a logistic-regression baseline on about 75,000 sandbox transactions (labels were sourced via Llama 3 zero-shot classification mapped to 18 distinct spending classes). Its RAG workflow turns each user’s own transaction history into budgeting recommendations, achieving an 88% factual consistency score on RAGAS evaluations.',
-    'I run delivery myself, not only the models. Python services run on Lambda and ECS, Apache Airflow orchestrates Plaid data ingestion, MLflow tracks every experiment, and Docker, Terraform and GitHub Actions cut deployment time from more than 35 minutes to under 5.',
-    'Earlier, I built a churn prediction system with Kafka and Apache Beam streaming and weekly automated retraining, plus data engineering and analytics pipelines for e-commerce and telecom use cases. I hold the AWS Certified Machine Learning Engineer – Associate certification. I am looking for AI Engineer and Data Engineering roles.',
+    'Most AI projects die between the notebook and production.',
+    'Not because the model is bad. Because the data pipeline breaks, the results can’t be reproduced, and deploying takes half a day.',
+    'I’m the engineer who builds that missing layer: pipelines, experiment tracking, and infrastructure as code, from raw data to a running system. Data engineering and AI engineering, in one person.',
+    'AWS Certified ML Engineer. See it in action ↓'
   ],
   about: 'I’m Mahmoud, an engineer based in Egypt with a focus on AI, machine learning, and data engineering. I’m interested in the whole path from raw data to a useful application: the backend, the pipeline, the model, and its deployment in the cloud.',
   approach: 'Independent projects give me room to explore engineering decisions. Freelance delivery has taught me to think about what happens after handover: validation, documentation, and systems a client can operate.',
