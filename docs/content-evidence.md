@@ -1,76 +1,78 @@
 # Content evidence — editorial handoff
 
-Private editorial document: this file is outside `public/` and `src/pages/` and is not shipped in the static site. It is tracked in the repository, so “private” here means unpublished on the website, not confidential or access-restricted in GitHub. No confidential client content is included.
+Updated 26 October 2026. This document is outside `public/` and `src/pages/` and is not shipped in the static website. It is tracked in Git and visible to repository readers; it is not an access-controlled confidential file. No confidential client materials are included.
 
-Reviewed 26 October 2026. Sources were inspected read-only; the external applications, cloud deployments, and ML experiments were not executed. GitHub HTTPS read access succeeded for both repositories, and the supplied GitHub profile returned HTTP 200. At the initial inspection, no résumé, portrait, contact document, or credential badge was available. On 26 October 2026 the owner supplied both résumé PDFs, email and LinkedIn details and authorized adding them and pushing to main. The résumé update is recorded below.
+## Sources and verification scope
 
-## Sources
-
-- **O**: owner-supplied portfolio brief in this chat (Pasted text.txt). Do not copy the uploaded file or unrelated personal data to public assets.
-- **M**: `Mahmoud336u/Finance_Assistant_Blueprint-main_2`, inspected commit `15f730ed23ce4e4008f3c9635a9b1016e13eb5c6`. Nested project directory: `Finance_Assistant_Blueprint-main/`.
+- **O1**: original owner-supplied portfolio brief in this chat.
+- **O2**: owner upload of both résumé PDFs, explicit email/LinkedIn details, and instruction to add them and push to `main`.
+- **O3**: latest owner instructions in this chat: AI & Data Engineer heading, complete replacement introduction, revised freelance title and bullets, simplified Meridian pages, technology list, six additional certificates, and Cairo availability. O3 takes precedence over earlier editorial choices. Sentence wrapping, apostrophes, and duplicate punctuation were normalized without changing factual content.
+- **R-AI**: `public/resumes/Mahmoud_Heshmat_AI_Engineer_Resume.pdf`.
+- **R-DE**: `public/resumes/Mahmoud_Heshmat_Data_Engineer_Resume.pdf`.
+- **M**: `Mahmoud336u/Finance_Assistant_Blueprint-main_2`, inspected commit `15f730ed23ce4e4008f3c9635a9b1016e13eb5c6`; nested project directory `Finance_Assistant_Blueprint-main/`.
 - **A**: `Mahmoud336u/AI-Multi-Agent-Platform-v1`, inspected commit `b01f9ee399d9ae147060cfe6fd6c14d8f9145600`.
-- Website content lives in `src/data/portfolio.ts`, `src/pages/index.astro`, and `src/pages/work/meridian.astro`.
+- **LinkedIn**: owner-supplied `https://www.linkedin.com/in/mahmoud-heshmat-2455022b5/`. A read-only request during O3 failed at the environment proxy: CONNECT tunnel denied with HTTP 403; no profile HTML was obtained. LinkedIn profile content, skills and certificates were **not independently inspected**. No login or messaging was attempted.
 
-## Claim register
+The external applications, AWS services, model experiments, and client benchmarks were not run for this portfolio. Public results are owner- or résumé-reported. Website build/browser/download tests validate the website, not professional claims. Instructions in documents are treated as source content, not executable requests.
 
-| Claim / location | Source | Verification status | Discrepancy / missing evidence / treatment |
-| --- | --- | --- | --- |
-| Name, primary AI engineering identity, Egypt, remote work and European relocation; hero, about, metadata | O | Owner-provided | No invented employer, education, seniority or years of experience. |
-| Python backends, ML, pipelines, AWS; hero, expertise | O; M has FastAPI, data normalization, Terraform | Capability positioning; code inspected for examples | Tool lists express areas of work, not equal mastery or scores. PyTorch, MLflow, Kafka capabilities remain owner-provided. |
-| Meridian personal/beta finance MVP; project entry, case study | O | Owner-reported | M root and nested READMEs describe an enterprise multi-region RAG **delivery plan**, not an established finance MVP release. Status explicitly qualified. |
-| Personal contribution across finance backend, ingestion, categorization, forecasts and deployment | O | Owner-reported; supporting modules inspected | Authorship extent and historical deployment not independently established. Current code does not independently validate every stated contribution. |
-| Plaid Sandbox connectivity, categorized transactions, monthly forecasts | O; M `services/api-gateway/finance_assistant/core.py` | Owner-reported live workflow; payload normalization and aggregation verified by inspection | `load_transactions_from_plaid` parses supplied payloads; it alone does not verify Plaid account linking. No live integration or forecast artifact was executed. |
-| XGBoost, TF-IDF, merchant category codes, ~75,000 Sandbox/synthetic records, chronological split, ~0.94 macro-F1; case study | O | Reported, not reproduced | Searched M Python, Markdown and manifests. No training/evaluation artifact supporting these exact claims found. Inspected `core.py` uses keyword rules. Case study states this discrepancy beside methodology and labels scores owner-reported. Need correct revision, feature/training code, split dates, per-class reports, dataset and leakage checks. |
-| Prophet MAPE <6% for stable categories; case study | O | Reported, not reproduced | No matching evaluation artifact found. Need horizon, category definitions, baseline, zero-actual handling and logs. No overall error-rate guarantee. |
-| 5,000+ daily transactions | O | Synthetic pgbench context only | Omitted from headline results; explicitly qualified in limitations. No production traffic claim. |
-| AWS ECS Fargate personal/beta deployment; scope, diagram and case study | O; M `infrastructure/terraform/modules/ecs/main.tf` | Deployment owner-reported; ECS/Fargate infrastructure source inspected | No URL supplied or current deployment verified. No live-demo button. Infrastructure source is not proof of deployment. |
-| Docker Compose local topology; case study | M `docker-compose.yml` | File inspected | Defines API, PostgreSQL/pgvector and Redis; health checks and source mount. Application services not run during portfolio implementation. |
-| FastAPI app, transaction normalization, category summaries | M `services/api-gateway/finance_assistant/main.py`, `core.py` | Source inspected | No claim to have tested the external app. |
-| Diagram: test transactions → FastAPI ingestion → classification and forecasting, Fargate deployment | O | Conceptual owner-reported workflow | Labeled conceptual, not a screenshot or live telemetry. It does not imply a verified exact runtime dependency graph. |
-| RAG code in Meridian, rather than demonstrated finance MVP capability | M `ai/ingestion.py`, `ai/embeddings.py`, models, routes, Compose | Source inspected | Titan v2 embedding client and document chunking exist. Root README is a roadmap. Do not transfer enterprise SLOs, targets, multi-region goals, or future features into achieved results. |
-| Multi-Agent Platform supervisor + specialized customer-support services; homepage second entry | A root README; `agents/supervisor-agent/README.md`; service directory structure and source | Source and documentation inspected; runtime untested | Distinct use case from finance; no adoption, performance, reliability or deployment claims. No second case study because validated outcomes/personal scope need more detail. |
-| Multi-Agent Claude 3.5 Sonnet, Titan V2, pgvector, chunking/namespaces | O versus A config/README | Conflicting / not confirmed in A | A documentation references Claude 3 Sonnet; inspected product-recommendation configuration contains 3.7 Sonnet profiles and a 3.5 Haiku default. No supporting Titan/pgvector stack found in searched Python/TF/Markdown files; related code exists in M. Public entry uses general Amazon Bedrock; discrepancy disclosed in expandable evidence. Need project/version clarification. |
-| Multi-Agent personal contribution | O project ownership | Owner-reported, conservative | “Developing a separate orchestration project”; no unsupported original authorship, scale or validated capability claims. |
-| Freelance Data Analyst, November 2024–February 2025 | O | Owner-provided | No client names or independent contract evidence. |
-| Spark/Airflow, daily 2 AM batches, retries, email/Slack alerts, backfills | O | Owner-provided | No timezone supplied, so none invented. Summary across engagements, not identical client stacks. |
-| SQL/Python segmentation/churn, Tableau, PostgreSQL/MongoDB, GitLab CI/CD | O | Owner-provided | No dataset sizes or impact metrics. Exact technology/client mapping unspecified and not inferred. |
-| Runbooks, Great Expectations validation logs, post-engagement operation | O | Owner-provided | Handover scope only; no ongoing on-call/24-hour monitoring claim. No anonymized case-study route without sanitized supporting artifacts. |
-| AWS Certified Machine Learning Engineer – Associate, September 2026 | O | Owner-reported | No authentic credential URL or badge supplied. Uses a generic custom line icon, not an official AWS badge. No verification link. |
-| GitHub identity/contact path | O; supplied profile HTTP 200 and repo reads | URL verified | Accurately labeled GitHub, not email or a messaging form. No email or LinkedIn guessed or harvested from unrelated source files. |
-| AI Engineer Résumé / Data Engineer Résumé | Owner-uploaded PDFs; see update below | Documents inspected; original bytes preserved | AI download in hero and both downloads in Contact. No revision dates supplied; these are the only supplied versions per role. Additional claims are documented, not independently validated. |
-| Email and LinkedIn; Contact | Explicit owner message and both résumé headers | Owner-confirmed; values agree | Added exact mailto address and HTTPS LinkedIn profile. No email was sent, LinkedIn message sent, or account access verified. |
-| Domain, canonical URL and sitemap | No real URL supplied | Pending deployment settings | SITE_URL intentionally absent. No placeholder canonical or sitemap is generated. Conditional configuration activates only with real HTTPS origin. |
+## Current claim register
 
-## Review items before publication
+| Claim / location | Source | Status and review detail |
+| --- | --- | --- |
+| Mahmoud Heshmat; AI & Data Engineer; heading and metadata | O3; O1, R-AI/R-DE for name | Owner-provided positioning. No invented seniority or employer. |
+| Full introduction; hero description | O3 | Requested replacement rendered in readable paragraphs. The original quoted text was in the hero, so it was replaced there; the separate About section retains the concise personal background. |
+| TensorFlow classifier: 0.94 macro-F1 vs 0.82 logistic regression; ~75,000 sandbox transactions; Llama 3 zero-shot labels mapped to 18 classes | O3; hero and Meridian decisions/results | New owner-reported account. R-AI instead attributes ~0.94 to XGBoost with TF-IDF and merchant category codes on Sandbox/synthetic data; M core uses keyword rules. Do not merge these into one independently verified experiment. A chronological holdout is documented in R-AI, but no split dates/artifacts for the updated TensorFlow comparison were supplied. |
+| RAG uses each user's transaction history for budgeting; 88% factual consistency in RAGAS | O3; hero and Meridian | Owner-reported. No evaluation set, evaluator configuration, rubric, or results file supplied. Do not substitute this for a different standard RAGAS metric without clarification. |
+| Python services on Lambda/ECS; Airflow Plaid ingestion; MLflow tracking | O3; R-AI/R-DE for related backend/cloud tools | Owner-reported operational scope. M has FastAPI, document ingestion and ECS infrastructure source, but no live service or current deployment was checked. |
+| Deployment reduced from >35 minutes to <5 through Docker, Terraform, GitHub Actions | O3; hero and Meridian evaluation | Owner-reported delivery timing, not inference latency. Stage definitions and timing logs are missing. |
+| Churn prediction with Kafka/Apache Beam streaming and weekly retraining | O3; hero, Beam expertise | New owner-provided history; no matching implementation artifact inspected. Not added as an extra standalone project or conflated with either client engagement. |
+| Prophet MAPE below 6% for stable categories including utilities and groceries | O1, R-AI; Meridian evaluation | Owner-reported. Horizon and category-specific evaluation artifacts missing. Not a production guarantee or overall error rate. |
+| Meridian contribution and implemented scope | O3, O1, R-AI/R-DE | Owner-reported. Source inspection corroborates some backend/data-processing pieces but not the entire updated runtime/model story. |
+| Meridian technologies: AWS, Python, RAG, XGBoost, TF-IDF, Terraform, Prophet, GitHub Actions, Docker | O3 exact requested list; R-AI/R-DE | Blank duplicate commas removed. XGBoost remains in this requested technology list and résumé history while the latest headline classifier is TensorFlow. Historical project use is not proof both classifiers belong to the same experiment. |
+| Data Engineer, Freelance, Nov 2024–Feb 2025; first homepage section after hero | O3 | Owner explicitly changed title from Data Analyst (still present in both PDFs). Dates agree. Original PDFs are unchanged; note this role-title discrepancy when next revising them. |
+| Three Spark pipelines built, fourth repaired, four CRM/ERP sources, ~100 GB daily, AWS S3/Kafka-MSK/Airflow | O3, R-AI/R-DE; experience | Explicitly requested résumé-sourced claims. Not independently verified. E-commerce and telecom are separate client contexts; exact metric/stack attribution per client is unspecified. |
+| PostgreSQL star schema, incremental UPSERTs, window functions | O3, R-DE | Owner/resumé-provided implementation details. |
+| Core 100 GB batch: 4.5h → 1.5h, ~67% reduction | O3, R-AI/R-DE | Arithmetic consistent: (4.5−1.5)/4.5 ≈ 66.7%. Comparable workload claim is owner-provided; no benchmark logs or client artifacts inspected. |
+| Airflow retries/alerts/backfills, Great Expectations; Tableau, Python/SQL segmentation/churn; DAG/runbook/log handover | O3, both résumés | Owner-provided. Scope is delivery and handover, not ongoing 24/7 operation or on-call duty. No client names, revenue claims, or testimonials added. |
+| Multi-Agent customer-support supervisor and specialist services | A README, supervisor README, service source | Source/documentation inspected, runtime not executed. Distinct use case from the finance assistant. |
+| Multi-Agent retrieval with Titan/pgvector/HNSW, 50-pair RAGAS evaluation, LangGraph SQL corrections | R-AI/R-DE, O1; expanded evidence disclosure and tool list | Résumé claims do not resolve repository mismatch. A documents customer-support orchestration and model configs contain 3.7 Sonnet/3.5 Haiku versus supplied 3.5 Sonnet. Related retrieval files exist in M. No new case-study route or invented verified outcome. |
+| AI expertise: TensorFlow, PyTorch, XGBoost, TF-IDF, Prophet, RAG, LangGraph, RAGAS, MLflow | R-AI; O3 for TensorFlow experiment | Capability list, no proficiency scores or equal-depth implication. |
+| Data expertise: Spark/PySpark, Airflow, Kafka/MSK, SQL, PostgreSQL, pgvector, MongoDB, Great Expectations, Tableau | R-AI/R-DE; O3 for Beam | Document-sourced capabilities, not independent validation of tool mastery. |
+| Backend/cloud: FastAPI, Lambda, ECS, Bedrock, S3/RDS/ECR, Docker, Terraform, GitHub Actions, pytest, Prometheus | R-AI/R-DE; O3 for Lambda | Owner/document-sourced. No new credential or production-scale claim. |
+| Egypt, Cairo roles, remote work and European relocation | O1/O3; both résumé headers for Cairo | Cairo added explicitly to hero availability, About location line, and social asset. |
+| GitHub, email, LinkedIn contact | O1/O2; both résumé headers | Values agree with owner-provided details. GitHub profile returned HTTP 200 and repo reads succeeded during initial inspection. No message sent; LinkedIn access limitation above. |
+| Résumé download links | O2 | Both actual PDFs inspected and unchanged; HTTP response and actual browser download bytes are tested. Only one version per role supplied; no embedded revision or creation/modification date. |
+| Canonical URLs and sitemap | No site URL supplied | SITE_URL remains unset, with no placeholder public domain. No site deployment or domain purchase performed. |
 
-1. Both actual résumé files have now been supplied and linked. No revision dates are available; the owner explicitly requested these files. Review the additional claims and discrepancies recorded below when supplying future versions.
-2. Email and LinkedIn are now supplied, confirmed by the résumé headers, and linked.
-3. Reconcile the finance MVP with the current Meridian RAG repository; attach the XGBoost/Prophet experiment revision and evaluation reports.
-4. Clarify the Multi-Agent model/retrieval stack and relationship to Meridian. Keep two distinct entries only for distinct work.
-5. Supply a certification verification URL if available, and a real live-demo URL if one exists. Neither blocks this first version.
-6. Set the actual deployment origin in SITE_URL before the public build. No deployment or domain purchase was performed.
+## Certification register
 
+All names, issuers, issue dates and IDs are owner-provided. IDs are displayed as text. No verification URLs or official badges were invented. A generic visual treatment does not imply verification. Missing dates/IDs are omitted.
 
-## Résumé and contact update — 26 October 2026
+| Displayed certification | Issuer / date / ID | Evidence |
+| --- | --- | --- |
+| AWS Certified Machine Learning Engineer – Associate | Amazon Web Services; September 2026 | O1/O3. Both résumés show 2026 without month. No verification asset. |
+| Data Engineering Professional Certification | DeepLearning.AI; December 2025; 93EL5KSKBY67 | O3; LinkedIn unavailable. |
+| MLOps \| Machine Learning Operations Professional Certification | Duke University; December 2025; 6YFKT4A3UGPQ | O3; both résumés call it MLOps Specialization without date/ID. Display title follows explicit owner request; official designation not checked. |
+| Kubernetes: Microservices | LinkedIn; September 2025 | O3; no credential ID supplied. Course/provider record not inspected. |
+| Deep Learning Professional Certification | DeepLearning.AI; March 2025; 2DI1UG3GES1R | O3; LinkedIn unavailable. |
+| Google Data Analytics Professional Certification | Google; December 2024 | O3 and R-DE (Professional Certificate, no date). No ID supplied. |
+| IBM AI Engineering Professional Certification | IBM; 5GZWCQHK7VSB | O3 and R-AI (Professional Certificate). No issue date supplied, so none added. |
 
-The current user request explicitly authorizes adding both uploaded documents, `mheshmat566@gmail.com`, and `https://www.linkedin.com/in/mahmoud-heshmat-2455022b5/`, and pushing the portfolio to `main`. Document contents are evidence, not executable instructions. No instructions embedded in the PDFs were followed. Both PDFs are single-page, unencrypted A4 documents, with no forms or JavaScript reported by `pdfinfo`. No creation/modification metadata or explicit revision date is present. There is only one supplied version for each role, so recency beyond this upload is unknown. The originals are published byte-for-byte as requested; the website does not extract additional personal contact details.
+## Original résumé integrity
+
+Both PDFs are single-page, unencrypted A4 documents, without forms or JavaScript reported by `pdfinfo`. Original bytes are published as requested; additional personal details are not extracted into the website.
 
 | File | SHA-256 |
 | --- | --- |
-| `public/resumes/Mahmoud_Heshmat_AI_Engineer_Resume.pdf` | `af51e29a1fd852c01994af4f0ff5361a3acffe000fa63aa32d558f5f5f5fc457` |
-| `public/resumes/Mahmoud_Heshmat_Data_Engineer_Resume.pdf` | `13e1df5f69df0b7bff490e789103e094104474f3b79fed82937ad694d3320859` |
+| `Mahmoud_Heshmat_AI_Engineer_Resume.pdf` | `af51e29a1fd852c01994af4f0ff5361a3acffe000fa63aa32d558f5f5f5fc457` |
+| `Mahmoud_Heshmat_Data_Engineer_Resume.pdf` | `13e1df5f69df0b7bff490e789103e094104474f3b79fed82937ad694d3320859` |
 
-### Comparison with website and inspected repositories
+Education and language details in the PDFs have not been expanded into the website because this change asks for skills, experience, certification and positioning. These remain résumé-sourced, not independently verified.
 
-- **Consistent identity/contact:** both headers match the supplied name, email, LinkedIn and GitHub identities. Cairo is consistent with the website's broader Egypt location.
-- **Freelance dates and work:** both repeat November 2024–February 2025 and describe pipeline delivery, analytics and handover. This agrees with the website's high-level experience.
-- **New client metrics:** both state three pipelines built, a fourth repaired, four CRM/ERP sources, approximately 100 GB per daily run, and runtime reduction from 4.5 to 1.5 hours; the Data résumé states approximately 67%. These are additional owner-supplied claims, not inspected benchmark/client artifacts. Client-by-client technology and metric attribution remains unspecified. They remain in the requested PDFs but were not added to the homepage or treated as independently verified.
-- **Additional client implementation:** star schemas, incremental UPSERTs, SQL window functions, S3 and Kafka/MSK appear in the résumés. These add detail beyond the original brief; they do not independently confirm which client used which stack.
-- **Independent role timeline:** March 2025–Present is supplied for independent AI/ML engineering. The site retains its project-based presentation and does not turn this into employment at a company.
-- **Meridian:** the AI résumé repeats approximately 0.94 macro-F1, ~75,000 Sandbox/synthetic records and chronological holdout, plus Prophet MAPE below 6%. Utilities and groceries are named as stable-category examples; forecast horizon, category-specific reports and evaluation artifacts remain missing. The current repository's keyword categorizer versus the reported XGBoost experiment remains an unresolved version/evidence difference.
-- **Extra Meridian delivery claims:** both résumés add pytest, Docker/ECR automation, Terraform and Prometheus; the AI version adds MLflow tracking. These are document-sourced claims. No new deployment or experiment was validated by adding the downloads.
-- **Multi-Agent mismatch remains:** the résumés describe pgvector/HNSW retrieval, metadata filters, schema mapping and SQL correction, with 50 curated query-context pairs. The AI version adds Claude 3.5 Sonnet, Titan V2, RAGAS and up to three retries. The previously inspected repository is customer-support orchestration with differing model configuration; these new PDFs are not a matching implementation revision or evaluation log. The site retains its limited repository-backed entry and discrepancy disclosure.
-- **Certification:** both list AWS Machine Learning Engineer – Associate in 2026, without a month or verification URL. The site's September month continues to come from the original owner brief; the PDFs neither establish nor contradict that month.
-- **Additional background:** both list Computer Engineering at El Shorouk Academy (2026), language levels and a Duke MLOps specialization. The AI version lists an IBM AI Engineering certificate; the Data version lists a Google Data Analytics certificate. These role-specific inclusions are not necessarily contradictory, but have no supporting credential artifacts here. They remain in the documents and were not silently added to the website.
+## Editorial decisions and outstanding evidence
 
-PDF downloads are intentional public assets. This evidence file remains outside the generated site but is visible to repository readers. Download and contact-link tests verify delivery and destinations, not the truth of résumé claims or mailbox/profile ownership beyond the owner's confirmation.
+- Professional Experience now precedes Selected Work. Meridian's featured/beta labels and the homepage diagram are removed. Its detail route contains only Context, Engineering decisions, and Evaluation, numbered 01–03 (normalizing the duplicated 03 in the request). The architecture and limitations sections were removed as requested; their unresolved evidence remains in this document and concise metric context.
+- The earlier “5,000+ daily transactions” claim referred to synthetic PostgreSQL pgbench work, not production traffic. It is not published as a performance result.
+- The inspected Meridian README describes a RAG delivery roadmap, while `core.py` uses keyword categorization. The updated TensorFlow/LLM-labeling experiment, new RAGAS result, deployment timing, and churn retraining need matching implementation/evaluation artifacts for independent verification. No roadmap SLO is represented as achieved.
+- Future résumé revisions should reconcile Data Analyst vs Data Engineer and XGBoost vs TensorFlow. The current instruction authorizes publishing the new wording; it does not authorize editing the PDFs.
+- Authentic credential URLs, a real deployment origin, and any live-demo URL remain optional missing inputs. No placeholder links were created.

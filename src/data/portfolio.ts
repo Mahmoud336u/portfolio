@@ -2,7 +2,6 @@ export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  status: string;
   description: string;
   contribution: string;
   scope: string;
@@ -13,10 +12,15 @@ export interface Project {
 
 export const profile = {
   name: 'Mahmoud Heshmat',
-  title: 'AI Engineer | Machine Learning & Data Engineering',
+  title: 'AI & Data Engineer',
   github: 'https://github.com/Mahmoud336u',
   location: 'Egypt',
-  intro: 'I build Python backends, machine learning workflows, and data pipelines — connecting useful models to the systems that put them to work.',
+  introduction: [
+    'I am an AI Engineer who builds LLM and RAG applications and the MLOps pipelines that run them on AWS.',
+    'My main project is an AI personal finance assistant. Its TensorFlow transaction classifier reaches 0.94 macro-F1 against 0.82 for a logistic-regression baseline on about 75,000 sandbox transactions (labels were sourced via Llama 3 zero-shot classification mapped to 18 distinct spending classes). Its RAG workflow turns each user’s own transaction history into budgeting recommendations, achieving an 88% factual consistency score on RAGAS evaluations.',
+    'I run delivery myself, not only the models. Python services run on Lambda and ECS, Apache Airflow orchestrates Plaid data ingestion, MLflow tracks every experiment, and Docker, Terraform and GitHub Actions cut deployment time from more than 35 minutes to under 5.',
+    'Earlier, I built a churn prediction system with Kafka and Apache Beam streaming and weekly automated retraining, plus data engineering and analytics pipelines for e-commerce and telecom use cases. I hold the AWS Certified Machine Learning Engineer – Associate certification. I am looking for AI Engineer and Data Engineering roles.',
+  ],
   about: 'I’m Mahmoud, an engineer based in Egypt with a focus on AI, machine learning, and data engineering. I’m interested in the whole path from raw data to a useful application: the backend, the pipeline, the model, and its deployment in the cloud.',
   approach: 'Independent projects give me room to explore engineering decisions. Freelance delivery has taught me to think about what happens after handover: validation, documentation, and systems a client can operate.',
 };
@@ -35,60 +39,73 @@ export const contact: { email?: string; linkedin?: string } = {
 export const projects: Project[] = [
   {
     id: 'meridian', title: 'Meridian', subtitle: 'Personal finance, made understandable.',
-    status: 'Personal / beta project',
-    description: 'Turning test banking transactions into categorized spending and monthly forecasts, with a Python API connecting the pieces.',
-    contribution: 'Built the finance assistant workflow across transaction ingestion, categorization, forecasting, and backend delivery.',
-    scope: 'Owner-reported MVP: Plaid Sandbox accounts, categorized transactions, monthly forecasts, and personal/beta deployment on AWS ECS Fargate.',
-    technologies: ['Python', 'FastAPI', 'XGBoost', 'Prophet', 'AWS ECS'],
+    description: 'An AI personal finance assistant that categorizes transactions, forecasts spending, and uses each user’s transaction history to ground budgeting recommendations.',
+    contribution: 'Built the classification and RAG workflows, orchestrated Plaid ingestion, and managed the Python services and MLOps delivery on AWS.',
+    scope: 'Plaid Sandbox ingestion, transaction classification, monthly forecasts, and retrieval-grounded budgeting recommendations, with Python services on Lambda and ECS.',
+    technologies: ['AWS', 'Python', 'RAG', 'XGBoost', 'TF-IDF', 'Terraform', 'Prophet', 'GitHub Actions', 'Docker'],
     repository: 'https://github.com/Mahmoud336u/Finance_Assistant_Blueprint-main_2',
     caseStudy: '/work/meridian/',
   },
   {
     id: 'multi-agent', title: 'AI Multi-Agent Platform', subtitle: 'Coordinating specialized AI agents.',
-    status: 'Independent project · in development',
     description: 'An exploration of customer-support workflows: a supervisor routes requests to specialized agents and brings their responses together.',
     contribution: 'Developing a separate orchestration project around specialized agents and AWS-backed language models.',
     scope: 'Repository contains supervisor, order management, recommendation, troubleshooting, and personalization services. Runtime behavior has not been independently validated.',
-    technologies: ['Python', 'LangGraph', 'FastAPI', 'Amazon Bedrock'],
+    technologies: ['Python', 'LangGraph', 'Amazon Bedrock', 'pgvector', 'RAGAS'],
     repository: 'https://github.com/Mahmoud336u/AI-Multi-Agent-Platform-v1',
   },
 ];
 
 export const expertise = [
-  { number: '01', title: 'AI & machine learning', description: 'From feature construction and model evaluation to retrieval workflows that connect language models with useful context.', tools: ['Python', 'PyTorch', 'XGBoost', 'MLflow', 'Retrieval-augmented generation'] },
-  { number: '02', title: 'Data engineering', description: 'Ingestion, transformation, and validation — with scheduling, recovery, and downstream reporting in mind.', tools: ['SQL', 'PostgreSQL', 'Apache Airflow', 'Spark', 'Kafka'] },
-  { number: '03', title: 'Backend & cloud', description: 'APIs and containerized services, supported by repeatable infrastructure and deployment workflows.', tools: ['FastAPI', 'Docker', 'AWS', 'Terraform', 'GitHub Actions'] },
+  { number: '01', title: 'AI & machine learning', description: 'Classification, forecasting, and retrieval-grounded applications, with model evaluation and experiment tracking.', tools: ['Python', 'TensorFlow', 'PyTorch', 'XGBoost', 'TF-IDF', 'Prophet', 'RAG', 'LangGraph', 'RAGAS', 'MLflow'] },
+  { number: '02', title: 'Data engineering', description: 'Batch and streaming ingestion, dimensional modeling, SQL transformations, orchestration, and data quality.', tools: ['SQL', 'Spark / PySpark', 'Apache Airflow', 'Kafka / MSK', 'Apache Beam', 'PostgreSQL', 'pgvector', 'MongoDB', 'Great Expectations', 'Tableau'] },
+  { number: '03', title: 'Backend & cloud', description: 'Python APIs, containerized workloads, and repeatable AWS delivery through infrastructure and automated checks.', tools: ['FastAPI', 'AWS Lambda', 'ECS Fargate', 'Amazon Bedrock', 'S3 / RDS / ECR', 'Docker', 'Terraform', 'GitHub Actions', 'pytest', 'Prometheus'] },
+];
+
+export interface Certification {
+  title: string;
+  issuer: string;
+  issued?: string;
+  credentialId?: string;
+}
+export const certifications: Certification[] = [
+  { title: 'AWS Certified Machine Learning Engineer – Associate', issuer: 'Amazon Web Services', issued: 'September 2026' },
+  { title: 'Data Engineering Professional Certification', issuer: 'DeepLearning.AI', issued: 'December 2025', credentialId: '93EL5KSKBY67' },
+  { title: 'MLOps | Machine Learning Operations Professional Certification', issuer: 'Duke University', issued: 'December 2025', credentialId: '6YFKT4A3UGPQ' },
+  { title: 'Kubernetes: Microservices', issuer: 'LinkedIn', issued: 'September 2025' },
+  { title: 'Deep Learning Professional Certification', issuer: 'DeepLearning.AI', issued: 'March 2025', credentialId: '2DI1UG3GES1R' },
+  { title: 'Google Data Analytics Professional Certification', issuer: 'Google', issued: 'December 2024' },
+  { title: 'IBM AI Engineering Professional Certification', issuer: 'IBM', credentialId: '5GZWCQHK7VSB' },
 ];
 
 export const experience = {
-  title: 'Freelance Data Analyst',
-  period: 'November 2024 — February 2025',
-  context: 'E-commerce & telecom · separate client engagements',
-  summary: 'Delivered analytical workflows and reporting for e-commerce and telecom clients, with an emphasis on daily operation and a practical handover.',
+  title: 'Data Engineer',
+  employment: 'Freelance',
+  period: 'Nov 2024 – Feb 2025',
+  context: 'E-commerce and telecom clients',
+  summary: 'Data pipelines and analytics',
   bullets: [
-    { title: 'Data, ready each morning.', text: 'Built daily batch pipelines using Apache Spark and Apache Airflow, scheduled for 2:00 AM. Reliability measures included retries, email/Slack alerts, and backfill support.' },
-    { title: 'Analysis with a delivery path.', text: 'Used SQL and Python for customer segmentation and churn analysis, and developed Tableau dashboards for business reporting. Worked with PostgreSQL and MongoDB across the engagements, with GitLab CI/CD supporting delivery.' },
-    { title: 'Designed for the handover.', text: 'Prepared runbooks and Great Expectations validation logs so clients could operate the pipelines after the engagement. This was a delivery and handover scope, without ongoing on-call responsibility.' },
+    'Built three Spark ETL pipelines and repaired a fourth, integrating four CRM/ERP sources and processing approximately 100 GB per daily run using AWS S3, Kafka/MSK, and Airflow.',
+    'Designed a PostgreSQL star schema, incremental UPSERTs, and SQL window-function transformations to prepare data for downstream analytics.',
+    'Reduced a core 100 GB batch runtime from 4.5 to 1.5 hours on comparable workloads, shortening daily data-processing time by approximately 67%.',
+    'Orchestrated daily Airflow runs with retries, failure alerts, and backfills; applied Great Expectations validation to support dependable pipeline operation.',
+    'Delivered Tableau dashboards and Python/SQL customer segmentation and churn analysis; handed over DAGs, runbooks, and validation logs to client IT/Data Ops teams.',
   ],
 };
 
 export const meridianStudy = {
-  problem: 'Personal spending data arrives as individual transactions. The aim of Meridian is to turn those records into a readable view of where money goes and an estimate of the coming month’s spending. The intended setting is personal exploration and beta testing with test banking accounts.',
-  contribution: 'My owner-reported scope covers the FastAPI backend, transaction ingestion, the classification and forecasting workflow, and deployment for personal/beta use. The repository also contains financial data models, CSV and Plaid-payload normalization, category summaries, Docker Compose configuration, and a separate retrieval implementation.',
+  problem: 'Personal spending data arrives as individual transactions. Meridian turns that history into categorized spending, monthly forecasts, and budgeting recommendations grounded in each user’s own transactions. Development and classification evaluation use sandbox data.',
+  contribution: 'I built the finance assistant’s classification and RAG workflows and manage delivery across Python services on Lambda and ECS. Apache Airflow orchestrates Plaid ingestion, MLflow tracks experiments, and Docker, Terraform, and GitHub Actions support deployment.',
   decisions: [
-    { title: 'Construct features from transaction context', text: 'The reported classification experiment combines TF-IDF features from transaction descriptions with merchant category codes, using XGBoost. This describes the experiment supplied for this portfolio; the inspected core.py instead contains keyword-based categorization. The trained model and feature pipeline still need to be linked to a reproducible artifact.' },
-    { title: 'Evaluate in chronological order', text: 'The reported experiment uses a chronological train/test split. This tests on later transactions rather than mixing all dates randomly. The split dates, per-class results, and leakage checks were not supplied, so the reported score is bounded by that missing context.' },
-    { title: 'Keep local dependencies explicit', text: 'The repository’s Docker Compose file defines the API, PostgreSQL with pgvector, and Redis, with dependency health checks and a source mount for development. This makes the intended local topology inspectable; it does not demonstrate a successful cloud rollout.' },
-    { title: 'Separate the finance MVP from the RAG roadmap', text: 'The current README describes an enterprise RAG delivery plan, and source files include document chunking and Bedrock embeddings. Those are separate from the finance MVP described here. Multi-region resilience, availability targets, and roadmap milestones are not presented as achieved results.' },
+    { title: 'Build a transaction-labeling workflow', text: 'The current classification workflow uses TensorFlow on approximately 75,000 sandbox transactions. Labels come from Llama 3 zero-shot classification mapped to 18 spending classes. Earlier résumé material describes XGBoost with TF-IDF transaction descriptions and merchant category codes; these are recorded as different accounts of the experiment, not a single verified model configuration.' },
+    { title: 'Compare against a simpler baseline', text: 'The reported TensorFlow classifier reaches 0.94 macro-F1 against 0.82 for logistic regression. Earlier résumé material records a chronological holdout. Split dates and evaluation artifacts for the updated comparison have not been supplied, so the baseline comparison remains owner-reported.' },
+    { title: 'Ground recommendations in personal history', text: 'The RAG workflow retrieves context from each user’s transaction history to produce budgeting recommendations. The reported RAGAS evaluation scores factual consistency at 88%. The exact evaluator configuration and evaluation set are not supplied.' },
+    { title: 'Own the delivery workflow', text: 'Python services run on Lambda and ECS, with Airflow for Plaid ingestion and MLflow for experiment tracking. The reported deployment workflow uses Docker, Terraform, and GitHub Actions to reduce deployment time from more than 35 minutes to under 5. This describes delivery timing, not model inference latency.' },
   ],
   evaluations: [
-    { value: '≈0.94', label: 'Macro-F1 · classification', context: 'Owner-reported XGBoost result on approximately 75,000 Plaid Sandbox and synthetic records, using TF-IDF, merchant category codes, and a chronological train/test split.' },
-    { value: '<6%', label: 'MAPE · stable categories', context: 'Owner-reported Prophet forecasting result for stable spending categories. Forecast horizon, category definitions, and evaluation logs were not supplied; this is not an overall or guaranteed error rate.' },
-  ],
-  limitations: [
-    'Sandbox and synthetic data do not establish performance on real customer transactions. No adoption or production traffic is claimed.',
-    'The earlier “5,000+ daily transactions” figure refers to a synthetic PostgreSQL pgbench benchmark, not customer usage; it is not used as a headline result.',
-    'AWS ECS Fargate deployment is owner-reported historical personal/beta use. No current live endpoint was supplied or verified.',
-    'The reported ML experiment differs from the current keyword-based core. The next documentation step is to reconcile versions and attach training code, split dates, and evaluation artifacts.',
+    { value: '0.94', label: 'Macro-F1 · classification', context: 'Owner-reported TensorFlow result against a 0.82 logistic-regression baseline on approximately 75,000 sandbox transactions. Llama 3 zero-shot labels are mapped to 18 spending classes.' },
+    { value: '88%', label: 'Factual consistency · RAGAS', context: 'Owner-reported evaluation of budgeting recommendations grounded in each user’s transaction history. Evaluation-set composition and evaluator configuration were not supplied.' },
+    { value: '<5 min', label: 'Deployment time', context: 'Owner-reported reduction from more than 35 minutes using Docker, Terraform, and GitHub Actions. Timing logs and the exact measured deployment stages were not supplied.' },
+    { value: '<6%', label: 'MAPE · spending forecasts', context: 'The supplied AI résumé reports Prophet MAPE below 6% for stable categories including utilities and groceries. Forecast horizon and category-specific evaluation reports were not supplied.' },
   ],
 };

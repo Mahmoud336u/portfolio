@@ -5,10 +5,10 @@ import '../styles/global.css';
 import Arrow from '../components/Arrow.astro';
 import { profile } from '../data/portfolio';
 interface Props { title?: string; description?: string; noindex?: boolean; }
-const { title = `${profile.name} — AI Engineer`, description = 'AI Engineer focused on practical machine learning, Python backends, data pipelines, and AWS deployment. Explore projects and freelance delivery by Mahmoud Heshmat.', noindex = false } = Astro.props;
+const { title = `${profile.name} — ${profile.title}`, description = 'AI & Data Engineer building LLM and RAG applications, Python services, data pipelines, and MLOps workflows on AWS. Explore projects and freelance delivery by Mahmoud Heshmat.', noindex = false } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
 const social = Astro.site ? new URL('/social.png', Astro.site) : undefined;
-const links = [{ href: '/#work', label: 'Work' }, { href: '/#experience', label: 'Experience' }, { href: '/#about', label: 'About' }, { href: '/#contact', label: 'Contact' }];
+const links = [{ href: '/#experience', label: 'Experience' }, { href: '/#work', label: 'Work' }, { href: '/#about', label: 'About' }, { href: '/#contact', label: 'Contact' }];
 ---
 <!doctype html>
 <html lang="en">
@@ -28,7 +28,7 @@ const links = [{ href: '/#work', label: 'Work' }, { href: '/#experience', label:
     {social && <meta property="og:image" content={social} />}
     {social && <meta property="og:image:width" content="1200" />}
     {social && <meta property="og:image:height" content="630" />}
-    {social && <meta property="og:image:alt" content="Mahmoud Heshmat — AI Engineer. Practical ML and data systems." />}
+    {social && <meta property="og:image:alt" content="Mahmoud Heshmat — AI & Data Engineer. Practical ML and data systems." />}
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {Astro.site && <link rel="sitemap" href="/sitemap-index.xml" />}

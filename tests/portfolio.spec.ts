@@ -34,7 +34,7 @@ test('mobile menu supports keyboard, escape, selection and resize', async ({ pag
   await page.keyboard.press('Enter');
   await expect(toggle).toHaveAttribute('aria-expanded', 'true');
   await page.keyboard.press('Tab');
-  await expect(nav.getByRole('link', { name: 'Work', exact: true })).toBeFocused();
+  await expect(nav.getByRole('link', { name: 'Experience', exact: true })).toBeFocused();
   await page.keyboard.press('Escape');
   await expect(nav).toBeHidden();
   await expect(toggle).toBeFocused();
@@ -59,9 +59,9 @@ test('skip link, project route, scope disclosure and contact work', async ({ pag
   await expect(page).toHaveURL(/#work$/);
   await page.getByText('Scope & repository evidence', { exact: false }).click();
   await expect(page.locator('details')).toHaveAttribute('open', '');
-  await page.getByRole('link', { name: 'Read the case study' }).click();
+  await page.getByRole('link', { name: 'More', exact: true }).click();
   await expect(page).toHaveURL(/\/work\/meridian\/$/);
-  await page.getByRole('link', { name: '04 / Evaluation' }).click();
+  await page.getByRole('link', { name: '03 / Evaluation' }).click();
   await expect(page).toHaveURL(/#evaluation$/);
   await expect(page.getByRole('heading', { name: 'Macro-F1 · classification' })).toBeVisible();
   await page.getByRole('link', { name: 'All selected work' }).click();
@@ -127,8 +127,8 @@ test('mobile navigation remains usable without JavaScript', async ({ browser }) 
 test('metadata has no invented canonical URL and reduced motion is honored', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
-  await expect(page).toHaveTitle('Mahmoud Heshmat — AI Engineer');
-  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /Python backends/);
+  await expect(page).toHaveTitle('Mahmoud Heshmat — AI & Data Engineer');
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /LLM and RAG applications/);
   expect(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)).toBe('auto');
   const canonical = page.locator('link[rel="canonical"]');
   if (await canonical.count()) await expect(canonical).toHaveAttribute('href', /^https:\/\//);

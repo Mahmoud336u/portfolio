@@ -1,6 +1,6 @@
 # Mahmoud Heshmat — portfolio
 
-A static Astro + TypeScript portfolio with Tailwind CSS 4 through the official Vite plugin. Includes a responsive homepage, Meridian engineering case study, email, LinkedIn and GitHub contact paths, résumé downloads, and custom 404. Fonts are self-hosted; the only client script controls the mobile navigation. No backend, credentials, analytics, or external font requests are required.
+A static Astro + TypeScript portfolio with Tailwind CSS 4 through the official Vite plugin. Includes a responsive homepage with freelance experience before selected projects, a three-section Meridian case study, email, LinkedIn and GitHub contact paths, résumé downloads, and custom 404. Fonts are self-hosted; the only client script controls the mobile navigation. No backend, credentials, analytics, or external font requests are required.
 
 ## Local development
 
@@ -68,10 +68,10 @@ Use the same production `SITE_URL` in production builds; decide separately wheth
 
 ## Editing
 
-- `src/data/portfolio.ts`: typed profile, projects, expertise, experience, case-study facts, verified contacts and résumé registry.
+- `src/data/portfolio.ts`: typed profile introduction, projects, expertise, experience, certifications, case-study facts, contacts and résumé registry.
 - `src/pages/index.astro`: homepage sections in the requested order.
 - `src/pages/work/meridian.astro`: detailed engineering case study. Add another route only when supported content is sufficient.
-- `src/components/`: shared section headings, arrow and conceptual architecture figure.
+- `src/components/`: shared section headings and arrow icons.
 - `src/layouts/Layout.astro`: navigation, metadata, footer and progressively enhanced mobile menu.
 - `src/styles/global.css`: design tokens, typography and responsive layouts; Tailwind utilities are available everywhere.
 - `public/`: shipped static files. Keep only public material here.
@@ -82,10 +82,12 @@ The owner-supplied AI Engineer and Data Engineer PDFs are stored unchanged under
 ## Missing inputs and factual review
 
 - Both résumé PDFs and email/LinkedIn details were supplied and added on 26 October 2026. Each role has one supplied version; neither PDF contains an explicit revision date.
-- The résumés add client scale/runtime metrics, more Multi-Agent implementation/evaluation claims, education and credentials. These remain document-sourced claims; the website was not silently expanded to treat them as independently verified. See the evidence register.
+- The latest owner edits explicitly add client scale/runtime metrics, a TensorFlow classifier with a logistic-regression baseline, Llama 3 labels, RAGAS factual consistency, deployment timing, streaming churn work, and six certificates. These are owner/resumé-sourced claims, not independently reproduced results.
+- The new Data Engineer title differs from Data Analyst in both unchanged PDFs. The latest TensorFlow account also differs from the XGBoost experiment described in the AI résumé. These differences are recorded in the evidence register.
+- LinkedIn could not be fetched because the environment proxy denied the connection (HTTP 403). The site uses the supplied profile URL and owner-provided certificate details without claiming independent LinkedIn verification.
 - No actual site URL, certification verification asset, or verified live-demo URL supplied.
-- Meridian’s current README is a RAG delivery roadmap; `core.py` uses keyword categorization. The supplied finance MVP, XGBoost/Prophet metrics and historical AWS deployment are explicitly owner-reported, not independently reproduced.
-- Multi-Agent documentation/configuration differs from the supplied model and retrieval stack. Its entry uses inspected customer-support orchestration scope, with no performance claims or extra case-study route.
-- Client delivery details and certification are owner-provided. No client names, results, screenshots or badge were fabricated.
+- Meridian’s current README is a RAG delivery roadmap; `core.py` uses keyword categorization. The current TensorFlow/RAG, deployment and Prophet evaluation results are owner-reported, not independently reproduced.
+- Multi-Agent documentation/configuration differs from the supplied model and retrieval stack. Its entry uses inspected customer-support orchestration scope, with résumé-sourced retrieval tools and no extra case-study route.
+- Client delivery details and certification are owner-provided. No client names, screenshots, verification URLs or official badges were invented. Credential IDs and supplied issue dates are displayed as text; IBM has no date because none was supplied.
 
 See the evidence register for exact inspected commits, source paths, and review actions. These content gaps do not block local site development. The owner authorized pushing the portfolio and supplied assets to repository `main`. A website deployment has not been performed by this task.
