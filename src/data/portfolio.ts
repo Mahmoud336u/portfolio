@@ -70,12 +70,12 @@ export interface Certification {
 }
 export const certifications: Certification[] = [
   { title: 'AWS Certified Machine Learning Engineer – Associate', issuer: 'Amazon Web Services', issued: 'September 2026' },
-  { title: 'Data Engineering Professional Certification', issuer: 'DeepLearning.AI', issued: 'December 2025', credentialId: '93EL5KSKBY67' },
-  { title: 'MLOps | Machine Learning Operations Professional Certification', issuer: 'Duke University', issued: 'December 2025', credentialId: '6YFKT4A3UGPQ' },
+  { title: 'Data Engineering Professional Certification', issuer: 'DeepLearning.AI', issued: 'December 2025' },
+  { title: 'MLOps | Machine Learning Operations Professional Certification', issuer: 'Duke University', issued: 'December 2025' },
   { title: 'Kubernetes: Microservices', issuer: 'LinkedIn', issued: 'September 2025' },
-  { title: 'Deep Learning Professional Certification', issuer: 'DeepLearning.AI', issued: 'March 2025', credentialId: '2DI1UG3GES1R' },
+  { title: 'Deep Learning Professional Certification', issuer: 'DeepLearning.AI', issued: 'March 2025'  },
   { title: 'Google Data Analytics Professional Certification', issuer: 'Google', issued: 'December 2024' },
-  { title: 'IBM AI Engineering Professional Certification', issuer: 'IBM', credentialId: '5GZWCQHK7VSB' },
+  { title: 'IBM AI Engineering Professional Certification', issuer: 'IBM', issued: 'Feb 2025 ' },
 ];
 
 export const experience = {
