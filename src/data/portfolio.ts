@@ -32,7 +32,7 @@ export const resumes: Resume[] = [
   { label: 'Data Engineer Résumé', href: '/resumes/Mahmoud_Heshmat_Data_Engineer_Resume.pdf' },
 ];
 export const contact: { email?: string; linkedin?: string } = {
-  email: 'mheshmat566@gmail.com',
+  email: '<a href="mailto:mheshmat566@gmail.com">Email Me</a>',
   linkedin: 'https://www.linkedin.com/in/mahmoud-heshmat-2455022b5/',
 };
 
