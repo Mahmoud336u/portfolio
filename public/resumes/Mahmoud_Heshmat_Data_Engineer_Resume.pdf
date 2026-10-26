@@ -1,0 +1,108 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.3 841.9] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [7 0 R 8 0 R 9 0 R] >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 6055 >>
+stream
+BT /F2 22 Tf 1 0 0 1 43 788.90 Tm (MAHMOUD HESHMAT) Tj ET
+BT /F2 12 Tf 1 0 0 1 43 770.90 Tm (DATA ENGINEER) Tj ET
+BT /F1 9.3 Tf 1 0 0 1 43 754.60 Tm (Cairo, Egypt | mheshmat566@gmail.com | +20 111 826 6047) Tj ET
+BT /F1 9.3 Tf 1 0 0 1 43 742.10 Tm (linkedin.com/in/mahmoud-heshmat-2455022b5/ | github.com/Mahmoud336u) Tj ET
+BT /F2 10.5 Tf 1 0 0 1 43 721.40 Tm (PROFESSIONAL SUMMARY) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 705.70 Tm (Data engineer with freelance experience building Spark ETL pipelines, Airflow workflows, and PostgreSQL data) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 693.50 Tm (models for e-commerce and telecom analytics. Develops Python API ingestion services and deploys applications) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 681.30 Tm (on AWS. Focused on reliable batch processing, SQL transformations, data quality, and maintainable delivery.) Tj ET
+BT /F2 10.5 Tf 1 0 0 1 43 658.80 Tm (TECHNICAL SKILLS) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 643.50 Tm (Languages and processing: Python, SQL, Apache Spark/PySpark, ETL/ELT, REST API ingestion) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 629.80 Tm (Orchestration and quality: Apache Airflow, Great Expectations, retries, backfills, validation, monitoring) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 616.10 Tm (Databases and modeling: PostgreSQL, MongoDB, dimensional modeling, star schemas, incremental UPSERTs, SQL) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 604.40 Tm (window functions) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 590.70 Tm (Cloud and delivery: AWS S3, RDS, ECS Fargate, ECR, Kafka/MSK, Docker, GitHub Actions, Terraform, pytest) Tj ET
+BT /F2 10.5 Tf 1 0 0 1 43 569.30 Tm (RELEVANT CLIENT EXPERIENCE) Tj ET
+BT /F2 10.2 Tf 1 0 0 1 43 550.60 Tm (Data Analyst | Freelance | Nov 2024 - Feb 2025) Tj ET
+BT /F1 9.5 Tf 1 0 0 1 43 537.00 Tm (E-commerce and telecom clients | Data pipelines and analytics) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 522.80 Tm (Built three Spark ETL pipelines and repaired a fourth, integrating four CRM/ERP sources and processing) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 522.80 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 510.60 Tm (approximately 100 GB per daily run using AWS S3, Kafka/MSK, and Airflow.) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 495.40 Tm (Designed a PostgreSQL star schema, incremental UPSERTs, and SQL window-function transformations to) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 495.40 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 483.20 Tm (prepare data for downstream analytics.) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 468.00 Tm (Reduced a core 100 GB batch runtime from 4.5 to 1.5 hours on comparable workloads, shortening daily) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 468.00 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 455.80 Tm (data-processing time by approximately 67%.) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 440.60 Tm (Orchestrated daily Airflow runs with retries, failure alerts, and backfills; applied Great Expectations validation) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 440.60 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 428.40 Tm (to support dependable pipeline operation.) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 413.20 Tm (Delivered Tableau dashboards and Python/SQL customer segmentation and churn analysis; handed over) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 413.20 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 401.00 Tm (DAGs, runbooks, and validation logs to client IT/Data Ops teams.) Tj ET
+BT /F2 10.5 Tf 1 0 0 1 43 378.50 Tm (ADDITIONAL ENGINEERING EXPERIENCE) Tj ET
+BT /F2 10.2 Tf 1 0 0 1 43 359.80 Tm (AI/ML Engineer | Independent Product and AI Engineering | Mar 2025 - Present) Tj ET
+BT /F1 9.5 Tf 1 0 0 1 43 346.20 Tm (Meridian Personal Finance Assistant | Personal/beta MVP) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 332.00 Tm (Built Python/FastAPI services and Plaid Sandbox ingestion for an application supporting test-account linking,) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 332.00 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 319.80 Tm (transaction categorization, and monthly spending forecasts.) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 304.60 Tm (Prepared approximately 75,000 sandbox and synthetic transaction records for model development, using) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 304.60 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 292.40 Tm (transaction descriptions and merchant category codes with chronological train/test separation.) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 277.20 Tm (Deployed the application on AWS ECS Fargate and packaged a reproducible local environment with Docker) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 277.20 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 265.00 Tm (Compose.) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 249.80 Tm (Automated pytest checks, Docker builds, and ECR publishing with GitHub Actions; managed infrastructure) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 249.80 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 237.60 Tm (with Terraform and monitored services with Prometheus.) Tj ET
+BT /F2 10.5 Tf 1 0 0 1 43 215.10 Tm (SELECTED PROJECT) Tj ET
+BT /F2 10.2 Tf 1 0 0 1 43 196.40 Tm (AI Multi-Agent Platform | Independent project) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 182.10 Tm (Implemented PostgreSQL querying and vector retrieval with RDS PostgreSQL/pgvector, HNSW indexing, and) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 182.10 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 169.90 Tm (metadata filtering.) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 154.70 Tm (Added schema mapping, few-shot SQL examples, and bounded query-correction retries to a LangGraph) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 43 154.70 Tm (\225) Tj ET
+BT /F1 10.2 Tf 1 0 0 1 53 142.50 Tm (agent; evaluated retrieval quality on 50 curated query-context pairs.) Tj ET
+BT /F2 10.5 Tf 1 0 0 1 43 120.00 Tm (CERTIFICATIONS) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 104.70 Tm (AWS Certified Machine Learning Engineer - Associate | 2026) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 91.00 Tm (Google Data Analytics Professional Certificate | MLOps Specialization, Duke University) Tj ET
+BT /F2 10.5 Tf 1 0 0 1 43 69.60 Tm (EDUCATION AND LANGUAGES) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 54.30 Tm (Bachelor of Engineering, Computer Engineering | El Shorouk Academy | 2026) Tj ET
+BT /F1 9.8 Tf 1 0 0 1 43 40.60 Tm (Arabic: Native | English: Professional working proficiency | German: B1) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Annot /Subtype /Link /Rect [111 752.6 265 765.6] /Border [0 0 0] /A << /S /URI /URI (mailto:mheshmat566@gmail.com) >> >>
+endobj
+8 0 obj
+<< /Type /Annot /Subtype /Link /Rect [43 740.1 295 753.1] /Border [0 0 0] /A << /S /URI /URI (https://www.linkedin.com/in/mahmoud-heshmat-2455022b5/) >> >>
+endobj
+9 0 obj
+<< /Type /Annot /Subtype /Link /Rect [295 740.1 501 753.1] /Border [0 0 0] /A << /S /URI /URI (https://github.com/Mahmoud336u) >> >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000283 00000 n 
+0000000380 00000 n 
+0000000482 00000 n 
+0000006589 00000 n 
+0000006735 00000 n 
+0000006906 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+7054
+%%EOF

@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Arrow from '../components/Arrow.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Architecture from '../components/Architecture.astro';
+import { profile, projects, expertise, experience, resumes, contact } from '../data/portfolio';
+const [meridian, multiAgent] = projects;
+---
+<Layout>
+  <div class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content"><p class="eyebrow hero-kicker"><span class="status-dot" aria-hidden="true"></span> AI Engineer · Machine Learning & Data Engineering</p>
+        <h1 id="hero-title">Building practical<br /><span class="serif">ML & data systems.</span></h1>
+        <p class="hero-description">{profile.intro} From local experiments to AWS deployment.</p>
+        <div class="actions"><a class="button button-primary" href="#work">Explore my work <Arrow /></a><a class="text-link" href="#contact">Get in touch <Arrow external /></a>{resumes.filter(r => r.label === 'AI Engineer Résumé').map(r => <a class="text-link" href={r.href} download>{r.label} <Arrow /></a>)}</div>
+      </div>
+      <aside class="hero-aside" aria-label="Working approach"><span class="eyebrow">The engineering thread</span><div class="thread"><span>01</span><p>Understand the data.</p><span>02</span><p>Build the system.</p><span>03</span><p>Make it useful.</p></div><p class="availability">Based in Egypt<br /><span>Open to remote work &<br />European relocation</span></p></aside>
+    </section>
+
+    <section id="work" class="section work-section" aria-label="Selected work">
+      <SectionHeading number="01" title="Selected work" note="Independent projects. Practical questions." />
+      <article class="featured-project">
+        <div class="featured-copy"><div class="flex flex-wrap items-center gap-3"><span class="eyebrow accent">Featured project</span><span class="status-label">{meridian.status}</span></div><h3>{meridian.title}<span class="accent">.</span></h3><p class="project-subtitle serif">{meridian.subtitle}</p><p>{meridian.description}</p><div class="contribution"><span class="eyebrow">My contribution</span><p>{meridian.contribution}</p></div><ul class="tags" aria-label="Meridian technologies">{meridian.technologies.map(tool => <li>{tool}</li>)}</ul><div class="actions"><a class="text-link" href={meridian.caseStudy}>Read the case study <Arrow /></a><a class="quiet-link" href={meridian.repository}>Repository <Arrow external /></a></div></div>
+        <Architecture />
+        <div class="project-evidence"><span class="eyebrow">Scope & evidence</span><p>{meridian.scope} The current repository differs from this account; the case study separates reported results from inspected code.</p></div>
+      </article>
+      <article class="secondary-project"><div class="secondary-index" aria-hidden="true">02 /</div><div><div class="eyebrow muted">{multiAgent.status}</div><h3>{multiAgent.title}</h3><p>{multiAgent.description}</p><p class="secondary-contribution"><strong>My contribution</strong> — {multiAgent.contribution}</p><ul class="tags" aria-label="Multi-Agent Platform technologies">{multiAgent.technologies.map(tool => <li>{tool}</li>)}</ul><details><summary>Scope & repository evidence <span aria-hidden="true">+</span></summary><div><p>{multiAgent.scope}</p><p>This is a customer-support orchestration project, separate from Meridian’s finance workflow. The supplied Titan/pgvector retrieval stack is not confirmed in this repository; related retrieval files appear in Meridian. Model versions and project boundaries need reconciliation.</p></div></details></div><a class="text-link repository-link" href={multiAgent.repository}>View repository <Arrow external /></a></article>
+    </section>
+
+    <section id="experience" class="section" aria-label="Professional experience">
+      <SectionHeading number="02" title="Professional experience" note="Client delivery, beyond the portfolio." />
+      <div class="experience-layout"><div class="experience-meta"><span class="eyebrow accent">Completed freelance engagements</span><h3>{experience.title}</h3><p>{experience.period}</p><span class="context-label">E-commerce & telecom</span><p class="small muted">Separate client contexts</p></div><div class="experience-body"><p class="lead">{experience.summary}</p>{experience.bullets.map((item, index) => <div class="experience-item"><span class="eyebrow accent">0{index + 1}</span><div><h4>{item.title}</h4><p>{item.text}</p></div></div>)}<p class="small muted scope-note">Technologies and contributions are summarized across separate engagements; this does not imply a shared system or identical stacks for both clients.</p></div></div>
+    </section>
+
+    <section id="expertise" class="section" aria-label="Expertise and certification">
+      <SectionHeading number="03" title="An end-to-end perspective" />
+      <div class="expertise-grid">{expertise.map(item => <article><span class="eyebrow accent">{item.number} /</span><h3>{item.title}</h3><p>{item.description}</p><ul class="tool-list">{item.tools.map(tool => <li>{tool}</li>)}</ul></article>)}</div>
+      <div class="certification"><div class="cert-mark" aria-hidden="true"><svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="currentColor"><path d="m20 3 14 8v18l-14 8-14-8V11Z"/><path d="m13 20 5 5 10-11" stroke-width="1.5"/></svg></div><div><span class="eyebrow muted">AWS certification</span><h3>AWS Certified Machine Learning Engineer – Associate</h3></div><p>Earned September 2026</p></div>
+    </section>
+
+    <section id="about" class="section about-layout" aria-label="About Mahmoud"><div><p class="eyebrow accent">04 / About</p><h2>Curious about the model.<br /><span class="serif">Committed to the system.</span></h2></div><div><p class="lead">{profile.about}</p><p>{profile.approach}</p><div class="about-location"><span class="status-dot" aria-hidden="true"></span> Egypt · Remote · European relocation</div></div></section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title"><div class="contact-main"><p class="eyebrow accent">05 / Let’s connect</p><h2 id="contact-title">Useful systems start with<br /><span class="serif">a good conversation.</span></h2><p>I’m exploring AI, ML, and data engineering opportunities. <br />Email me about a role or connect with me on LinkedIn.</p><div class="actions">{contact.email && <a class="button button-primary" href={`mailto:${contact.email}`}>Email Mahmoud <Arrow external /></a>}<a class={contact.email ? "text-link" : "button button-primary"} href={profile.github}>Find me on GitHub <Arrow external /></a>{contact.linkedin && <a class="text-link" href={contact.linkedin}>LinkedIn <Arrow external /></a>}</div>{resumes.length > 0 && <div class="resume-links"><h3>Résumés</h3>{resumes.map(resume => <a class="text-link" href={resume.href} download>{resume.label} <Arrow /></a>)}</div>}</div><aside class="services"><span class="eyebrow muted">Also open to freelance projects</span><h3>Work with me</h3><ul><li>Python backends & API integrations</li><li>Data pipelines, validation & reporting</li><li>AI assistants & retrieval workflows</li></ul><p>Focused engineering support,<br />with a clear delivery and handover.</p></aside></section>
+  </div>
+</Layout>

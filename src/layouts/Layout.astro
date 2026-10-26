@@ -1,0 +1,64 @@
+---
+import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/newsreader';
+import '../styles/global.css';
+import Arrow from '../components/Arrow.astro';
+import { profile } from '../data/portfolio';
+interface Props { title?: string; description?: string; noindex?: boolean; }
+const { title = `${profile.name} — AI Engineer`, description = 'AI Engineer focused on practical machine learning, Python backends, data pipelines, and AWS deployment. Explore projects and freelance delivery by Mahmoud Heshmat.', noindex = false } = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const social = Astro.site ? new URL('/social.png', Astro.site) : undefined;
+const links = [{ href: '/#work', label: 'Work' }, { href: '/#experience', label: 'Experience' }, { href: '/#about', label: 'About' }, { href: '/#contact', label: 'Contact' }];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#141817" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && !noindex && <link rel="canonical" href={canonical} />}
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {social && <meta property="og:image" content={social} />}
+    {social && <meta property="og:image:width" content="1200" />}
+    {social && <meta property="og:image:height" content="630" />}
+    {social && <meta property="og:image:alt" content="Mahmoud Heshmat — AI Engineer. Practical ML and data systems." />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {Astro.site && <link rel="sitemap" href="/sitemap-index.xml" />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header container">
+      <a class="wordmark" href="/" aria-label="Mahmoud Heshmat, home"><span class="monogram" aria-hidden="true">mh<span>.</span></span><span>Mahmoud Heshmat</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menu <span aria-hidden="true">+</span></button>
+      <nav id="navigation" aria-label="Main navigation">{links.map(link => <a href={link.href}>{link.label}<span class="nav-dot"><Arrow external /></span></a>)}</nav>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="container site-footer"><span>© {new Date().getUTCFullYear()} Mahmoud Heshmat</span><span>Built with intention. Based in Egypt.</span><a href={profile.github}>GitHub <Arrow external /></a></footer>
+    <script>
+      const button = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const nav = document.querySelector<HTMLElement>('#navigation');
+      if (button && nav) {
+        button.hidden = false;
+        document.documentElement.classList.add('nav-enhanced');
+        const close = () => { button.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); };
+        button.addEventListener('click', () => {
+          const open = button.getAttribute('aria-expanded') !== 'true';
+          button.setAttribute('aria-expanded', String(open));
+          nav.classList.toggle('is-open', open);
+        });
+        nav.addEventListener('click', (event) => { if ((event.target as Element).closest('a')) close(); });
+        document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') { close(); button.focus(); } });
+        document.addEventListener('click', (event) => { if (!(event.target as Element).closest('.site-header')) close(); });
+        window.matchMedia('(min-width: 761px)').addEventListener('change', close);
+      }
+    </script>
+  </body>
+</html>
